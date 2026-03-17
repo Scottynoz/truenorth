@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>True North Tiny Homes | Canada's #1 Tiny Home Resource</title>
+    <meta name="description" content="Discover affordable tiny homes in Canada from $2,995. Compare designs, financing options, and off-grid solutions. Ships nationwide." />
+    <meta name="keywords" content="tiny homes Canada, tiny house, bunkie kit, prefab homes, off-grid living, solar power, composting toilet" />
+    <meta name="author" content="True North Tiny Homes" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="True North Tiny Homes | Canada's #1 Tiny Home Resource" />
+    <meta property="og:description" content="Discover affordable tiny homes in Canada from $2,995. Compare designs, financing options, and off-grid solutions." />
+    <meta property="og:image" content="/hero-tiny-home.jpg" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>" />
+    
+    <!-- Google Analytics 4 - REPLACE G-XXXXXXXXXX WITH YOUR TRACKING ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+      
+      // Custom events for affiliate tracking
+      gtag('event', 'page_view', {
+        'page_title': document.title,
+        'page_location': window.location.href,
+        'page_path': window.location.pathname
+      });
+    </script>
+    
+    <!-- Affiliate Link Click Tracking -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Track all external link clicks
+        document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            const isAmazon = href.includes('amazon');
+            const isAffiliate = href.includes('tag=') || href.includes('ref=');
+            
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'affiliate_click', {
+                'event_category': 'Affiliate',
+                'event_label': href,
+                'value': isAmazon ? 1 : 0,
+                'transport_type': 'beacon'
+              });
+            }
+          });
+        });
+        
+        // Track application form submissions
+        document.querySelectorAll('form').forEach(function(form) {
+          form.addEventListener('submit', function() {
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'form_submit', {
+                'event_category': 'Lead',
+                'event_label': 'Credit Application',
+                'transport_type': 'beacon'
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

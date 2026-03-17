@@ -1,0 +1,45 @@
+Date,Source,Type,Product/Service,Commission Amount,Status,Payment Date,Notes
+2024-03-01,Amazon,Product,EcoFlow Delta 2,$56.60,Pending,,Sold through affiliate link
+2024-03-02,LightStream,Lender Referral,Personal Loan,$150.00,Paid,2024-03-15,Loan funded successfully
+2024-03-03,Builder,Referral,Teacup Tiny Home,$750.00,Pending,Sale closing April 15
+2024-03-04,Amazon,Product,Berkey Water Filter,$28.00,Pending,,Sold through affiliate link
+2024-03-05,SoFi,Lender Referral,Personal Loan,$125.00,Paid,2024-03-20,Loan funded successfully
+,,,,,,,
+MONTHLY SUMMARY,,,,,,,
+Month,Total Revenue,Amazon,Lenders,Builders,Other,,
+March 2024,"$1,109.60",$84.60,$275.00,$750.00,$0.00,,
+,,,,,,,
+BUILDER PARTNERSHIP TRACKING,,,,,,,
+Builder,Contact,Date Contacted,Response,Status,Commission Rate,Notes
+Teacup Tiny Homes,info@teacuptinyhomes.com,2024-03-01,Interested,Negotiating,$750/sale,Waiting for agreement
+Summit Tiny Homes,info@summittinyhomes.com,2024-03-02,No reply,Follow-up 1,$1000/sale,Send follow-up email
+Bunkie Life,info@bunkielife.com,2024-03-03,Positive,Call scheduled,$250/sale,Call on March 10
+Kaldees,info@kaldees.com,2024-03-04,No reply,Follow-up 1,$500/sale,Send follow-up email
+Acorn Tiny Homes,info@acorntinyhomes.com,2024-03-05,Not interested,Closed,,$0 - doesn't do referrals
+Mint Tiny Homes,info@minttinyhomes.com,2024-03-06,Interested,Agreement sent,$500/sale,Waiting for signed agreement
+,,,,,,,
+AFFILIATE PROGRAM STATUS,,,,,,,
+Program,Network,Status,Commission,Account ID,Login URL,Notes
+Amazon Associates CA,Amazon,Active,4%,truenorthtiny-20,affiliate-program.amazon.ca,Main product revenue
+Amazon Associates US,Amazon,Active,4%,truenorthtiny0c-20,affiliate-program.amazon.com,US customers
+LightStream,Impact.com,Pending,$100-300/loan,,app.impact.com,Applied March 1
+SoFi,Direct,Active,$100-150/loan,,sofi.com/affiliates,Approved March 5
+Upstart,Partnerize,Pending,$75-200/loan,,partnerize.com,Applied March 2
+LendingClub,CJ.com,Pending,$50-100/loan,,cj.com,Applied March 3
+,,,,,,,
+WEBSITE METRICS,,,,,,,
+Date,Visitors,Page Views,Affiliate Clicks,Applications,Conversion Rate,,
+2024-03-01,342,892,23,5,1.46%,,
+2024-03-02,298,756,18,3,1.01%,,
+2024-03-03,415,1023,31,4,0.96%,,
+2024-03-04,367,891,27,6,1.63%,,
+2024-03-05,289,712,19,2,0.69%,,
+2024-03-06,401,987,29,4,1.00%,,
+2024-03-07,356,834,24,3,0.84%,,
+,,,,,,,
+GOALS,,,,,,,
+Metric,Target,March Actual,Variance,Notes,,,
+Monthly Visitors,5000,2468,-51%,Need more SEO content,,,
+Affiliate Clicks,100,171,+71%,Good conversion!,,,
+Applications,20,27,+35%,Exceeding target,,,
+Commission Revenue,$1000,$1109.60,+11%,On track,,,
