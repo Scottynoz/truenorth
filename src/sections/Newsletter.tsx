@@ -23,12 +23,49 @@ const benefits = [
 
 const Newsletter = () => {
   const [email, setEmail] = useState('')
+  const [honeypot, setHoneypot] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const endpoint = import.meta.env.VITE_FORMSPREE_NEWSLETTER_ENDPOINT as string | undefined
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (email) {
+
+    if (!endpoint) {
+      setError('Newsletter form is not configured.')
+      return
+    }
+
+    if (honeypot) {
       setIsSubmitted(true)
+      return
+    }
+
+    setIsSubmitting(true)
+    setError(null)
+
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      })
+
+      if (!res.ok) {
+        const data = (await res.json().catch(() => null)) as { error?: string } | null
+        throw new Error(data?.error || 'Failed to subscribe.')
+      }
+
+      setIsSubmitted(true)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to subscribe.')
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -87,6 +124,16 @@ const Newsletter = () => {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <Input
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                      tabIndex={-1}
+                      autoComplete="off"
+                      className="hidden"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <div>
+                    <Input
                       type="email"
                       placeholder="Enter your email address"
                       value={email}
@@ -95,12 +142,16 @@ const Newsletter = () => {
                       required
                     />
                   </div>
+                  {error && (
+                    <p className="text-sm text-red-200 text-center">{error}</p>
+                  )}
                   <Button
                     type="submit"
                     size="lg"
                     className="w-full bg-white text-primary hover:bg-white/90 h-14 text-lg font-semibold"
+                    disabled={isSubmitting}
                   >
-                    Send Me The Guide
+                    {isSubmitting ? 'Sending...' : 'Send Me The Guide'}
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </form>

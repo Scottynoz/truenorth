@@ -11,6 +11,7 @@ import WasteManagement from './sections/WasteManagement'
 import Financing from './sections/Financing'
 import BuildersDirectory from './sections/BuildersDirectory'
 import Newsletter from './sections/Newsletter'
+import Contact from './sections/Contact'
 import Footer from './sections/Footer'
 import AdminDashboard from './sections/AdminDashboard'
 
@@ -46,6 +47,7 @@ function App() {
         <Financing />
         <BuildersDirectory />
         <Newsletter />
+        <Contact />
       </main>
       <Footer />
     </div>
